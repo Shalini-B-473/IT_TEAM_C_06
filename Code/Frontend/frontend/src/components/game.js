@@ -22,9 +22,27 @@ export default class Game extends React.Component {
       coins: ["R", "N", "B", "Q", "K", "Q", "B", "N", "R", "", "R", "", "", "", "", "", "B", "", "P", "P", "P", "P", "P", "P", "P", "P", "P", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "P", "P", "P", "P", "P", "P", "P", "P", "P", "", "B", "", "", "", "", "", "R", "", "R", "N", "B", "Q", "K", "Q", "B", "N", "R"],
       counter: 0,
       sno: 1,
-      tableData: []
+      tableData: [],
+      prevTime: null,
+      currentTime: new Date(),
+      timeDifference: null,
+      // whiteTime : 0,
+      // blackTime : 0
     }
   }
+
+  updateTime() {
+    const currentTime = new Date();
+    const prevTime = this.state.currentTime;
+    const timeDifference = prevTime ? Math.abs(currentTime - prevTime) / 1000 : null;
+
+    this.setState({
+      prevTime,
+      currentTime,
+      timeDifference,
+    });
+  }
+
 
   handleClick(i) {
     const squares = [...this.state.squares];
@@ -46,6 +64,7 @@ export default class Game extends React.Component {
       return
     }
 
+    this.updateTime();
     squares[this.state.sourceSelection].style = { ...squares[this.state.sourceSelection].style, backgroundColor: "" };
 
     if (squares[i] && squares[i].player === this.state.player) {
@@ -183,8 +202,26 @@ export default class Game extends React.Component {
       //       console.log(error);
       //     });
 
-
+     /* if (this.state.turn !== prevState.turn) {
+        const currentTime = new Date().getTime();
+        const timeDiff = currentTime - this.state.prevTime;
+  
+        if (this.state.turn === 'white') {
+          this.setState(prevState => ({
+            
+            whiteTime: prevState.whiteTime + timeDiff,
+            prevTime: currentTime,
+          }));
+        } else {
+          this.setState(prevState => ({
+            blackTime: prevState.blackTime + timeDiff,
+            prevTime: currentTime,
+          }));
+        }
+      }*/
     }
+
+
   }
 
   renderTable() {
@@ -198,7 +235,9 @@ export default class Game extends React.Component {
           <tr>
             <th>Sno</th>
             <th>White</th>
+            <th>White Time</th>
             <th>Black</th>
+            <th>Black Time</th>
           </tr>
         </thead>
         <tbody>
@@ -206,7 +245,11 @@ export default class Game extends React.Component {
             <tr key={row.sno}>
               <td>{row.sno}</td>
               <td>{row.white}</td>
+              {/* <td>{this.state.whiteTime}</td> */}
+              <td></td>
               <td>{row.black}</td>
+              {/* <td>{this.state.blackTime}</td> */}
+              <td></td>
             </tr>
           ))}
         </tbody>
@@ -259,6 +302,11 @@ export default class Game extends React.Component {
               <div >{this.state.val}</div>
             </div>
             <div className="game-status">{this.state.status}</div>
+
+            <div>
+              <h3>Time Difference:</h3>
+              <p>{this.state.timeDifference !== null ? `${this.state.timeDifference} seconds` : 'N/A'}</p>
+            </div>
 
             <div className="fallen-soldier-block">
               <p className='display-6'>Fallen Soldiers Block</p>
