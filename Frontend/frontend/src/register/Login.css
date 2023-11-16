@@ -1,0 +1,20 @@
+form{
+    width : 40%;
+    margin-top: 5%;
+    margin-left: 30%;
+    justify-content: center;
+}
+.align{
+    margin-left : 5%;
+    margin-right: 5%;
+}
+input[type="text"],input[type="password"],input[type="email"]{
+    width: 80%;
+}
+.rm{
+    margin-left: 5px;
+}
+#result{
+    text-align:center;
+    color : red;
+}
