@@ -56,6 +56,7 @@ export default function SignUp(){
           <div className="row">
             <div className='col-sm-4-offset-4'>
               <form className='border border-primary' onSubmit={handleSubmit}>
+              <h2 className='text-center '>9x9 Board Game</h2>
                 <h3 className='text-center mt-5'>Sign Up</h3><br/>
                 <div className="align">
                   <label>Name</label>

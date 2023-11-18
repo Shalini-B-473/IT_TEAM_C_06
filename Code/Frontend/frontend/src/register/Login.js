@@ -52,6 +52,7 @@ export default function Login(){
           <div className="row">
             <div className='col-sm-4-offset-4'>
               <form className='border border-primary' onSubmit={handleSubmit}>
+              <h2 className='text-center'>9x9 Board Game</h2>
                 <h3 className='text-center mt-5'>Sign In</h3>
                 <div className="align">
                   <label>User ID</label>
@@ -84,7 +85,7 @@ export default function Login(){
                 />
                 </div><br/>
                 <div className="align">
-                  <div>
+                  {/* <div>
                     <input
                       type="checkbox"
                       className="custom-control-input"
@@ -93,7 +94,7 @@ export default function Login(){
                     <label className="custom-control-label rm" htmlFor="customCheck1">
                       Remember me
                     </label>
-                  </div>
+                  </div> */}
                 </div><br />
                 <div className="text-center">
                 <button type="submit" className="btn btn-primary text-white bg-primary">
