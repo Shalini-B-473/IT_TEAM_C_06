@@ -16,6 +16,7 @@ with associated alerts. The envisioned system aims to elevate the overall gaming
 experience, providing players with a seamless, feature-rich platform for 
 enjoying and preserving their gameplay history.
 
+# Steps to run the project
 
 Install Node Js
 Create a folder named Frontend
