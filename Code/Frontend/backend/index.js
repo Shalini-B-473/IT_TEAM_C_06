@@ -12,7 +12,8 @@ app.post('/login', function (req, res) {
     let userID = req.body.userID
     let password = req.body.password
     const MongoClient = require("mongodb").MongoClient
-    const url = 'mongodb://localhost:27017/'
+    // const url = 'mongodb://localhost:27017/'
+    const url = 'mongodb+srv://shalinibasker0326:SlnAW7Rj3IZdatnH@cluster0.vxmvgo2.mongodb.net/?retryWrites=true&w=majority'
     MongoClient.connect(url)
         .then(
             function (db) 
@@ -50,7 +51,8 @@ app.post('/signup', function(req,res){
     let email = req.body.email
     let password = req.body.password
     const MongoClient = require('mongodb').MongoClient
-    const url = 'mongodb://localhost:27017'
+    // const url = 'mongodb://localhost:27017/'
+    const url = 'mongodb+srv://shalinibasker0326:SlnAW7Rj3IZdatnH@cluster0.vxmvgo2.mongodb.net/?retryWrites=true&w=majority'
     MongoClient.connect(url)
     .then(
         function(db){
@@ -89,7 +91,8 @@ app.post('/InsertWhiteBlack' , function(req,res){
     let val = req.body.val
     let sno = req.body.sno
     const MongoClient = require("mongodb").MongoClient
-    const url = 'mongodb://localhost:27017'
+    // const url = 'mongodb://localhost:27017/'
+    const url = 'mongodb+srv://shalinibasker0326:SlnAW7Rj3IZdatnH@cluster0.vxmvgo2.mongodb.net/?retryWrites=true&w=majority'
     MongoClient.connect(url)
     .then(
         function(db)
@@ -123,7 +126,8 @@ app.post('/Insert' , function(req,res){
     let val = req.body.val
     let sno = req.body.sno
     const MongoClient = require("mongodb").MongoClient
-    const url = 'mongodb://localhost:27017'
+    // const url = 'mongodb://localhost:27017/'
+    const url = 'mongodb+srv://shalinibasker0326:SlnAW7Rj3IZdatnH@cluster0.vxmvgo2.mongodb.net/?retryWrites=true&w=majority'
     MongoClient.connect(url)
     .then(
         function(db)
@@ -150,7 +154,8 @@ app.post('/Update', function(req, res) {
     let sno = req.body.sno;
 
     const MongoClient = require("mongodb").MongoClient;
-    const url = 'mongodb://localhost:27017';
+    // const url = 'mongodb://localhost:27017/'
+    const url = 'mongodb+srv://shalinibasker0326:SlnAW7Rj3IZdatnH@cluster0.vxmvgo2.mongodb.net/?retryWrites=true&w=majority'
 
     MongoClient.connect(url)
         .then(function(db) {
