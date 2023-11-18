@@ -307,9 +307,9 @@ export default class GameAuto extends React.Component {
             <div id="player-turn-box" style={{ backgroundColor: this.state.turn }}>
 
             </div>
-            <div>
+            {/* <div>
             <div >{this.state.val}</div>
-            </div>
+            </div> */}
             <div className="game-status">{this.state.status}</div>
            
             <div className="fallen-soldier-block">
