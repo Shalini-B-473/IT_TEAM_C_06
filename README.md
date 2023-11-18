@@ -3,7 +3,9 @@ Dynamic Board Game Web Application with enhanced features
 
 Install Node Js
 Create a folder named Frontend
+
 Open folder in Code Editor and in terminal type 
+
   ->npm init
   ->npx create-react-app frontend
   ->npm install axios
